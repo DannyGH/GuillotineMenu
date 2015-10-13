@@ -62,10 +62,6 @@ class GuillotineTransitionAnimation: NSObject {
         menu.view.center = CGPointMake(0, CGRectGetHeight(menu.view.frame))
         menu.beginAppearanceTransition(true, animated: true)
         
-        let hostViewController = context.viewControllerForKey(UITransitionContextToViewControllerKey)!
-        hostViewController.beginAppearanceTransition(false, animated: true)
-        
-        
         context.containerView()!.addSubview(menu.view)
         animateMenu(menu.view, context: context)
     }
@@ -90,7 +86,6 @@ class GuillotineTransitionAnimation: NSObject {
         context.containerView()!.insertSubview(hostViewController.view, belowSubview: menu.view)
         context.containerView()!.addConstraintsToFitView(hostViewController.view, insets: UIEdgeInsetsMake(statusbarHeight + navigationBarHeight, 0, 0, 0))
         menu.beginAppearanceTransition(false, animated: true)
-        hostViewController.beginAppearanceTransition(true, animated: true)
         animateMenu(menu.view, context: context)
     }
     
@@ -220,7 +215,7 @@ extension GuillotineTransitionAnimation: UIDynamicAnimatorDelegate {
             let hostViewController = animationContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
             hostViewController.navigationController?.setNavigationBarHidden(false, animated: false)
             menu.view.removeFromSuperview()
-            hostViewController.endAppearanceTransition() // for some reason it does not get called for host view controller on menu dismissed
+            menu.endAppearanceTransition()
             print("finished")
             if let animationDelegate = menu as? protocol<GuillotineAnimationDelegate> {
                 animationDelegate.menuDidFinishDismissal?()
