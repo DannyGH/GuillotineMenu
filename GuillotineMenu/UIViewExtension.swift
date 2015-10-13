@@ -11,17 +11,17 @@ import UIKit
 
 extension UIView
 {
-    func addConstraintsToFitView (view: UIView?, insets:UIEdgeInsets) {
+    func addConstraintsToFitView(view: UIView?, insets:UIEdgeInsets) {
         if let fillView = view {
             fillView.translatesAutoresizingMaskIntoConstraints = false
             self.addConstraint(NSLayoutConstraint(item: fillView, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1.0, constant: insets.top))
             self.addConstraint(NSLayoutConstraint(item: fillView, attribute: .Leading, relatedBy: .Equal, toItem: self, attribute: .Leading, multiplier: 1.0, constant: insets.left))
-            self.addConstraint(NSLayoutConstraint(item: fillView, attribute: .Trailing, relatedBy: .Equal, toItem: self, attribute: .Trailing, multiplier: 1.0, constant: insets.right))
-            self.addConstraint(NSLayoutConstraint(item: fillView, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1.0, constant: insets.right))
+            self.addConstraint(NSLayoutConstraint(item: fillView, attribute: .Trailing, relatedBy: .Equal, toItem: self, attribute: .Trailing, multiplier: 1.0, constant: -insets.right))
+            self.addConstraint(NSLayoutConstraint(item: fillView, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1.0, constant: -insets.bottom))
         }
     }
     
-    func addConstraintsForMenuButton (button: UIButton?, offset:UIOffset) -> (NSLayoutConstraint, NSLayoutConstraint) {
+    func addConstraintsForMenuButton(button: UIButton?, offset:UIOffset) -> (NSLayoutConstraint, NSLayoutConstraint) {
         var leading: NSLayoutConstraint!
         var top: NSLayoutConstraint!
         if let fillView = button {
