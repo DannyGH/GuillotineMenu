@@ -88,7 +88,7 @@ class GuillotineTransitionAnimation: NSObject {
         }
         
         context.containerView()!.insertSubview(hostViewController.view, belowSubview: menu.view)
-        context.containerView()!.addAddConstraintsToFitView(hostViewController.view, insets: UIEdgeInsetsMake(statusbarHeight + navigationBarHeight, 0, 0, 0))
+        context.containerView()!.addConstraintsToFitView(hostViewController.view, insets: UIEdgeInsetsMake(statusbarHeight + navigationBarHeight, 0, 0, 0))
         menu.beginAppearanceTransition(false, animated: true)
         hostViewController.beginAppearanceTransition(true, animated: true)
         animateMenu(menu.view, context: context)
@@ -209,7 +209,7 @@ extension GuillotineTransitionAnimation: UIDynamicAnimatorDelegate {
             self.animator.removeAllBehaviors()
             menu.view.transform = CGAffineTransformIdentity
             menu.view.frame = animationContext.containerView()!.bounds
-            menu.view.superview!.addAddConstraintsToFitView(menu.view, insets: UIEdgeInsetsZero)
+            menu.view.superview!.addConstraintsToFitView(menu.view, insets: UIEdgeInsetsZero)
             anchorPoint = CGPointZero
             menu.endAppearanceTransition()
             print("finished")

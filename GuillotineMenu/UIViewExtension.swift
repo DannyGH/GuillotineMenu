@@ -1,5 +1,5 @@
 //
-//  FillWithView.swift
+//  UIViewExtension.swift
 //  Memo
 //
 //  Created by Maksym Lazebnyi on 1/30/15.
@@ -11,7 +11,7 @@ import UIKit
 
 extension UIView
 {
-    func addAddConstraintsToFitView (view: UIView?, insets:UIEdgeInsets) {
+    func addConstraintsToFitView (view: UIView?, insets:UIEdgeInsets) {
         if let fillView = view {
             fillView.translatesAutoresizingMaskIntoConstraints = false
             self.addConstraint(NSLayoutConstraint(item: fillView, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1.0, constant: insets.top))
