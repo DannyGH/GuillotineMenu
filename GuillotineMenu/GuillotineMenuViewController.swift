@@ -54,10 +54,8 @@ class GuillotineMenuViewController: UIViewController {
     private func setMenuButton() {
         let statusbarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
         
-        let image = UIImage(named: "ic_menu")
         menuButton = UIButton(frame: CGRectMake(menuButtonPortraitLeadingConstant, menuButtonPortraitLeadingConstant+statusbarHeight, 30.0, 30.0))
         
-        menuButton.setImage(image, forState: .Normal)
         menuButton.imageView!.contentMode = .Center
         menuButton.addTarget(self, action: Selector("closeMenuAnimated"), forControlEvents: .TouchUpInside)
         menuButton.translatesAutoresizingMaskIntoConstraints = false
@@ -75,7 +73,7 @@ class GuillotineMenuViewController: UIViewController {
         }
     }
     
-    func setMenuButtonImage(image:UIImage, state: UIControlState) {
+    func setMenuButtonImage(image: UIImage?, state: UIControlState) {
         menuButton.setImage(image, forState: state)
     }
     

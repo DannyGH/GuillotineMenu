@@ -35,7 +35,7 @@ class ViewController: UIViewController {
             destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
             destinationVC.hostTitleText = self.navigationItem.title
             destinationVC.view.backgroundColor = self.navigationController!.navigationBar.barTintColor
-            destinationVC.setMenuButtonImage(barButton.imageView!.image!, state: .Normal)
+            destinationVC.setMenuButtonImage(barButton.imageView!.image, state: .Normal)
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let menuVC = storyboard.instantiateViewControllerWithIdentifier("MyMenuVC") as! MenuViewController
