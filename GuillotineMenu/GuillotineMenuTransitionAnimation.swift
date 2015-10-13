@@ -11,7 +11,7 @@ import UIKit
 @objc protocol GuillotineAnimationProtocol: NSObjectProtocol {
     func navigationBarHeight() -> CGFloat
     func anchorPoint() -> CGPoint
-    func hostTitle () -> NSString
+    func hostTitle () -> String?
 }
 
 @objc protocol GuillotineAnimationDelegate: NSObjectProtocol {
@@ -149,7 +149,7 @@ class GuillotineTransitionAnimation: NSObject {
         hostTitleLabel.numberOfLines = 1;
         
         if let menuProt = menu as? protocol<GuillotineAnimationProtocol> {
-            hostTitleLabel.text = menuProt.hostTitle() as String
+            hostTitleLabel.text = menuProt.hostTitle()
         }
         
         hostTitleLabel.font = UIFont.boldSystemFontOfSize(17)

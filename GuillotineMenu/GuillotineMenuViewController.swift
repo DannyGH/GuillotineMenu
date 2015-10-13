@@ -11,7 +11,7 @@ import UIKit
 class GuillotineMenuViewController: UIViewController {
 
     var hostNavigationBarHeight: CGFloat!
-    var hostTitleText: NSString!
+    var hostTitleText: String?
 
     var menuButton: UIButton!
     var menuButtonLeadingConstraint: NSLayoutConstraint!
@@ -110,7 +110,7 @@ extension GuillotineMenuViewController: GuillotineAnimationProtocol {
         }
     }
     
-    func hostTitle () -> NSString {
+    func hostTitle () -> String? {
         return hostTitleText
     }
 }
