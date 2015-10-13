@@ -45,7 +45,7 @@ class ViewController: UIViewController {
                 self.performSegueWithIdentifier("MenuOptionVC", sender: viewControllerTitle)
             }
             
-            destinationVC.addContentViewController(menuVC)
+            destinationVC.addChildContentViewController(menuVC, edgeInsets: UIEdgeInsetsZero)
         } else
         {
             let destinationVC = segue.destinationViewController 

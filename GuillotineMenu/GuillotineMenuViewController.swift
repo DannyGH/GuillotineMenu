@@ -9,8 +9,6 @@
 import UIKit
 
 class GuillotineMenuViewController: UIViewController {
-    
-    var contentViewController: UIViewController?
 
     var hostNavigationBarHeight: CGFloat!
     var hostTitleText: NSString!
@@ -28,10 +26,6 @@ class GuillotineMenuViewController: UIViewController {
         setMenuButton()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        view.addConstraintsToFitView(contentViewController?.view, insets: UIEdgeInsetsZero)
-    }
-    
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
         
@@ -47,10 +41,14 @@ class GuillotineMenuViewController: UIViewController {
         }
     }
     
-    func addContentViewController(viewController: UIViewController) {
-        contentViewController = viewController;
-        viewController.view.frame = view.bounds
-        self.view.insertSubview(viewController.view, belowSubview: menuButton)
+    func addChildContentViewController(viewController: UIViewController, edgeInsets: UIEdgeInsets) {
+        if let childViewController : UIViewController? = viewController {
+            self.addChildViewController(childViewController!)
+            view.addSubview(childViewController!.view)
+            view.addConstraintsToFitView(childViewController!.view, insets: edgeInsets)
+            view.bringSubviewToFront(menuButton)
+            childViewController!.didMoveToParentViewController(self)
+        }
     }
     
     private func setMenuButton() {
