@@ -13,7 +13,7 @@ class GuillotineMenuViewController: UIViewController {
     var hostNavigationBarHeight: CGFloat!
     var hostTitleText: String?
 
-    var menuButton: UIButton!
+    private(set) var menuButton: UIButton!
     var menuButtonLeadingConstraint: NSLayoutConstraint!
     var menuButtonTopConstraint: NSLayoutConstraint!
     
