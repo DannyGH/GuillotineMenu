@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HV9-Uq-kvX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9058" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HV9-Uq-kvX">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9048"/>
     </dependencies>
     <scenes>
         <!--Activity-->
@@ -34,7 +34,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="580" height="288"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="content_1@3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gcb-gK-d8d">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="content_1" translatesAutoresizingMaskIntoConstraints="NO" id="Gcb-gK-d8d">
                                                     <rect key="frame" x="0.0" y="0.0" width="580" height="288"/>
                                                 </imageView>
                                             </subviews>
@@ -129,118 +129,102 @@
             <point key="canvasLocation" x="1645" y="484"/>
         </scene>
         <!--Menu View Controller-->
-        <scene sceneID="ZlZ-2M-K3G">
+        <scene sceneID="S6d-ws-Khr">
             <objects>
-                <viewController storyboardIdentifier="MyMenuVC" modalPresentationStyle="currentContext" id="fth-R5-ROZ" customClass="MenuViewController" customModule="GuillotineMenuExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TestMenuStoryboardID" id="Syl-ZI-qnx" customClass="MenuViewController" customModule="GuillotineMenuExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rSI-dx-N1K"/>
-                        <viewControllerLayoutGuide type="bottom" id="z09-MX-auK"/>
+                        <viewControllerLayoutGuide type="top" id="2iE-cB-QHw"/>
+                        <viewControllerLayoutGuide type="bottom" id="NlV-cF-IN2"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GS8-gc-m11">
+                    <view key="view" contentMode="scaleToFill" id="I5K-fE-J5A">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKF-z9-rVR">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLV-iE-6eW">
                                 <rect key="frame" x="150" y="175" width="300" height="250"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0N-Sn-nKz">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKa-O9-6qr">
                                         <rect key="frame" x="54" y="202" width="200" height="40"/>
                                         <accessibility key="accessibilityConfiguration" label="SETTINGS"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="FuH-Qu-DO6"/>
-                                            <constraint firstAttribute="width" constant="200" id="Nd0-bY-aoZ"/>
+                                            <constraint firstAttribute="width" constant="200" id="HPH-F3-0xc"/>
+                                            <constraint firstAttribute="height" constant="40" id="JNz-rK-uub"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <inset key="titleEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="SETTINGS" image="ic_settings@3x.png">
+                                        <state key="normal" title="SETTINGS" image="ic_settings">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="menuButtonTapped:" destination="fth-R5-ROZ" eventType="touchUpInside" id="mn8-DL-0Ht"/>
-                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nN6-jJ-Etz">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABJ-rD-leT">
                                         <rect key="frame" x="50" y="8" width="200" height="40"/>
                                         <accessibility key="accessibilityConfiguration" label="PROFILE"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="1Tp-6J-c1Q"/>
-                                            <constraint firstAttribute="width" constant="200" id="9B1-GD-Art"/>
+                                            <constraint firstAttribute="height" constant="40" id="Jui-qm-B48"/>
+                                            <constraint firstAttribute="width" constant="200" id="agJ-uQ-xWx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <inset key="titleEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="PROFILE" image="ic_profile@3x.png">
+                                        <state key="normal" title="PROFILE" image="ic_profile">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="menuButtonTapped:" destination="fth-R5-ROZ" eventType="touchUpInside" id="Uw3-Fb-YB1"/>
-                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RO-8m-4aQ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCx-eD-30i">
                                         <rect key="frame" x="50" y="56" width="200" height="40"/>
                                         <accessibility key="accessibilityConfiguration" label="FEED"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="Onz-LD-2il"/>
-                                            <constraint firstAttribute="height" constant="40" id="WfZ-Gz-0Fw"/>
+                                            <constraint firstAttribute="height" constant="40" id="MjN-VQ-n17"/>
+                                            <constraint firstAttribute="width" constant="200" id="wgg-eB-SVZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <inset key="titleEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="FEED" image="ic_feed@3x.png">
+                                        <state key="normal" title="FEED" image="ic_feed">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="menuButtonTapped:" destination="fth-R5-ROZ" eventType="touchUpInside" id="u2i-Yo-Pnd"/>
-                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YrH-iu-7LY">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfm-Sh-yME">
                                         <rect key="frame" x="50" y="105" width="200" height="40"/>
                                         <accessibility key="accessibilityConfiguration" label="ACTIVITY"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="Duw-Rk-efz"/>
-                                            <constraint firstAttribute="height" constant="40" id="nCd-EY-9iu"/>
+                                            <constraint firstAttribute="width" constant="200" id="7sT-Cg-CXR"/>
+                                            <constraint firstAttribute="height" constant="40" id="u5o-jM-GFi"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <inset key="titleEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="ACTIVITY" image="ic_activity@3x.png">
+                                        <state key="normal" title="ACTIVITY" image="ic_activity">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="menuButtonTapped:" destination="fth-R5-ROZ" eventType="touchUpInside" id="GsK-58-JrZ"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="i0N-Sn-nKz" firstAttribute="centerX" secondItem="YrH-iu-7LY" secondAttribute="centerX" constant="4" id="0WL-zK-0QM"/>
-                                    <constraint firstItem="YrH-iu-7LY" firstAttribute="centerX" secondItem="2RO-8m-4aQ" secondAttribute="centerX" id="3V6-3M-Ton"/>
-                                    <constraint firstAttribute="height" constant="250" id="Cda-7w-SwR"/>
-                                    <constraint firstItem="nN6-jJ-Etz" firstAttribute="centerX" secondItem="2RO-8m-4aQ" secondAttribute="centerX" id="LjY-jB-dtN"/>
-                                    <constraint firstAttribute="bottom" secondItem="i0N-Sn-nKz" secondAttribute="bottom" constant="8" id="NJc-ji-7M8"/>
-                                    <constraint firstAttribute="width" constant="300" id="O2x-PF-Wbx"/>
-                                    <constraint firstItem="nN6-jJ-Etz" firstAttribute="top" secondItem="qKF-z9-rVR" secondAttribute="top" constant="8" id="gMu-S1-LS7"/>
-                                    <constraint firstItem="2RO-8m-4aQ" firstAttribute="top" secondItem="nN6-jJ-Etz" secondAttribute="bottom" constant="8" id="nO0-an-Ste"/>
-                                    <constraint firstItem="YrH-iu-7LY" firstAttribute="top" secondItem="2RO-8m-4aQ" secondAttribute="bottom" constant="9" id="vvo-BT-M8p"/>
-                                    <constraint firstAttribute="centerX" secondItem="nN6-jJ-Etz" secondAttribute="centerX" id="zEx-7e-yda"/>
+                                    <constraint firstAttribute="height" constant="250" id="3gD-q3-Juz"/>
+                                    <constraint firstItem="pfm-Sh-yME" firstAttribute="centerX" secondItem="rCx-eD-30i" secondAttribute="centerX" id="3r2-KG-Clb"/>
+                                    <constraint firstItem="ABJ-rD-leT" firstAttribute="centerX" secondItem="rCx-eD-30i" secondAttribute="centerX" id="4zA-qv-Wq8"/>
+                                    <constraint firstItem="ABJ-rD-leT" firstAttribute="top" secondItem="SLV-iE-6eW" secondAttribute="top" constant="8" id="Afz-5O-Wq5"/>
+                                    <constraint firstItem="fKa-O9-6qr" firstAttribute="centerX" secondItem="pfm-Sh-yME" secondAttribute="centerX" constant="4" id="RDc-Xl-0jj"/>
+                                    <constraint firstItem="pfm-Sh-yME" firstAttribute="top" secondItem="rCx-eD-30i" secondAttribute="bottom" constant="9" id="Xiw-8I-Uq0"/>
+                                    <constraint firstItem="rCx-eD-30i" firstAttribute="top" secondItem="ABJ-rD-leT" secondAttribute="bottom" constant="8" id="dek-W4-lIx"/>
+                                    <constraint firstAttribute="centerX" secondItem="ABJ-rD-leT" secondAttribute="centerX" id="feF-pq-utp"/>
+                                    <constraint firstAttribute="width" constant="300" id="ppb-ss-jtp"/>
+                                    <constraint firstAttribute="bottom" secondItem="fKa-O9-6qr" secondAttribute="bottom" constant="8" id="qky-sp-mqd"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.25490196078431371" green="0.24313725490196078" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.25490196079999999" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="qKF-z9-rVR" secondAttribute="centerY" id="BSU-YQ-eb8"/>
-                            <constraint firstAttribute="centerX" secondItem="qKF-z9-rVR" secondAttribute="centerX" id="zc3-Uf-Zag"/>
+                            <constraint firstItem="SLV-iE-6eW" firstAttribute="centerY" secondItem="I5K-fE-J5A" secondAttribute="centerY" id="D6m-XY-cUh"/>
+                            <constraint firstItem="SLV-iE-6eW" firstAttribute="centerX" secondItem="I5K-fE-J5A" secondAttribute="centerX" id="mlp-wr-DF4"/>
                         </constraints>
                     </view>
-                    <keyCommands>
-                        <keyCommand/>
-                    </keyCommands>
-                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Eey-Au-nRY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yAZ-Xu-jJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2282" y="484"/>
+            <point key="canvasLocation" x="3052" y="484"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zrU-IG-XyS">
@@ -267,11 +251,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="content_1@3x.png" width="750" height="432"/>
-        <image name="ic_activity@3x.png" width="75" height="57"/>
-        <image name="ic_feed@3x.png" width="63" height="66"/>
+        <image name="content_1" width="250" height="144"/>
+        <image name="ic_activity" width="25" height="19"/>
+        <image name="ic_feed" width="21" height="22"/>
         <image name="ic_menuRotated.png" width="10" height="14"/>
-        <image name="ic_profile@3x.png" width="51" height="72"/>
-        <image name="ic_settings@3x.png" width="69" height="69"/>
+        <image name="ic_profile" width="17" height="24"/>
+        <image name="ic_settings" width="23" height="23"/>
     </resources>
 </document>
