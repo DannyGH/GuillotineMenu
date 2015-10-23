@@ -13,16 +13,15 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
-    var titleString: String!
-    
-    typealias MenuClosureBlock = (String) -> Void
-    var closureBlock: MenuClosureBlock!
+    typealias MenuTapAction = () -> Void
+
+    var menuTapAction: MenuTapAction?
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
     
     @IBAction func menuButtonTapped(sender: UIButton) {
-        closureBlock?(sender.accessibilityLabel!)
+        menuTapAction?()
     }
 }

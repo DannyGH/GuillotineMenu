@@ -41,13 +41,13 @@ class GuillotineMenuViewController: UIViewController {
         }
     }
     
-    func addChildContentViewController(viewController: UIViewController, edgeInsets: UIEdgeInsets) {
-        if let childViewController : UIViewController? = viewController {
-            self.addChildViewController(childViewController!)
-            view.addSubview(childViewController!.view)
-            view.addConstraintsToFitView(childViewController!.view, insets: edgeInsets)
+    func addChildContentViewController(viewController: UIViewController?, edgeInsets: UIEdgeInsets) {
+        if let childViewController = viewController {
+            self.addChildViewController(childViewController)
+            view.addSubview(childViewController.view)
+            view.addConstraintsToFitView(childViewController.view, insets: edgeInsets)
             view.bringSubviewToFront(menuButton)
-            childViewController!.didMoveToParentViewController(self)
+            childViewController.didMoveToParentViewController(self)
         }
     }
     

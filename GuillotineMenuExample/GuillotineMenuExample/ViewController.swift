@@ -28,8 +28,6 @@ class ViewController: UIViewController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-// Your Menu View Controller vew must know the following data for the proper animatio
-        
         if segue.destinationViewController.isKindOfClass(GuillotineMenuViewController) {
             let destinationVC = segue.destinationViewController as! GuillotineMenuViewController
             destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
@@ -38,18 +36,14 @@ class ViewController: UIViewController {
             destinationVC.setMenuButtonImage(barButton.imageView!.image, state: .Normal)
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let menuVC = storyboard.instantiateViewControllerWithIdentifier("MyMenuVC") as! MenuViewController
+            let menuVC = storyboard.instantiateViewControllerWithIdentifier("TestMenuStoryboardID") as! MenuViewController
             
-            menuVC.closureBlock = { viewControllerTitle in
+            menuVC.menuTapAction = {_ in
                 destinationVC.closeMenuAnimated()
-                self.performSegueWithIdentifier("MenuOptionVC", sender: viewControllerTitle)
+                self.performSegueWithIdentifier("MenuOptionVC", sender: self)
             }
             
             destinationVC.addChildContentViewController(menuVC, edgeInsets: UIEdgeInsetsZero)
-        } else
-        {
-            let destinationVC = segue.destinationViewController 
-            destinationVC.title = sender as? String
         }
     }
 }
