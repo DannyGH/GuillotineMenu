@@ -23,8 +23,24 @@ class ViewController: UIViewController {
         navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("host view will appear")
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        print("host view did appear")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("host view will disappear")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("host view did disappear")
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -43,9 +59,35 @@ class ViewController: UIViewController {
                 self.performSegueWithIdentifier("MenuOptionVC", sender: self)
             }
             
+            destinationVC.transitioningDelegate = self
+            destinationVC.modalPresentationStyle = .Custom
+            
             destinationVC.addChildContentViewController(menuVC, edgeInsets: UIEdgeInsetsZero)
         }
     }
+}
+
+extension ViewController: UIViewControllerTransitioningDelegate {
+
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return GuillotineTransitionAnimation(GuillotineTransitionAnimation.Mode.Presentation)
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return GuillotineTransitionAnimation(GuillotineTransitionAnimation.Mode.Dismissal)
+    }
+    
+//    func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+//    
+//    }
+//    
+//    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+//    
+//    }
+//    
+//    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+//    
+//    }
 }
 
 // The follwing is just for the presentation. You can ignore it

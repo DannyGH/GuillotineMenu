@@ -60,7 +60,7 @@ class GuillotineTransitionAnimation: NSObject {
         }
         // Move view off screen to avoid blink at start
         menu.view.center = CGPointMake(0, CGRectGetHeight(menu.view.frame))
-        menu.beginAppearanceTransition(true, animated: true)
+        menu.beginAppearanceTransition(true, animated: true)    //ML: TODO: revisit this
         
         context.containerView()!.addSubview(menu.view)
         animateMenu(menu.view, context: context)
@@ -191,7 +191,7 @@ extension GuillotineTransitionAnimation: UIViewControllerAnimatedTransitioning {
 
 extension GuillotineTransitionAnimation: UICollisionBehaviorDelegate {
     func collisionBehavior(behavior: UICollisionBehavior, beganContactForItem item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, atPoint p: CGPoint) {
-        print("collided")
+//        print("collided")
         if let animationDelegate = menu as? protocol<GuillotineAnimationDelegate> {
                 animationDelegate.menuDidCollideWithBoundary?()
         }
@@ -206,8 +206,8 @@ extension GuillotineTransitionAnimation: UIDynamicAnimatorDelegate {
             menu.view.frame = animationContext.containerView()!.bounds
             menu.view.superview!.addConstraintsToFitView(menu.view, insets: UIEdgeInsetsZero)
             anchorPoint = CGPointZero
-            menu.endAppearanceTransition()
-            print("finished")
+            menu.endAppearanceTransition()  //ML: TODO: revisit this
+//            print("finished")
             if let animationDelegate = menu as? protocol<GuillotineAnimationDelegate> {
                 animationDelegate.menuDidFinishPresentation?()
             }
@@ -216,7 +216,7 @@ extension GuillotineTransitionAnimation: UIDynamicAnimatorDelegate {
             hostViewController.navigationController?.setNavigationBarHidden(false, animated: false)
             menu.view.removeFromSuperview()
             menu.endAppearanceTransition()
-            print("finished")
+//            print("finished")
             if let animationDelegate = menu as? protocol<GuillotineAnimationDelegate> {
                 animationDelegate.menuDidFinishDismissal?()
             }
@@ -225,6 +225,6 @@ extension GuillotineTransitionAnimation: UIDynamicAnimatorDelegate {
     }
     
     func dynamicAnimatorWillResume(animator: UIDynamicAnimator) {
-        print("started")
+//        print("started")
     }
 }
